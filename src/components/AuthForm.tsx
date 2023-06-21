@@ -38,7 +38,14 @@ const AuthForm: FC<AuthFormProps> = ({}) => {
         setValue,
         handleSubmit,
         formState: { errors },
-    } = useForm<FieldValues>();
+    } = useForm<FieldValues>({
+        defaultValues: {
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+        },
+    });
 
     const onSubmit = handleSubmit(async (data) => {
         setIsLoading(true);
@@ -66,6 +73,7 @@ const AuthForm: FC<AuthFormProps> = ({}) => {
                     router.push("/dashboard");
                 }
             });
+            setIsLoading(false);
         }
     });
 

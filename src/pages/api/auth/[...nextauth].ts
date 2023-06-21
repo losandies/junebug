@@ -1,5 +1,6 @@
 import GoogleProvider from "next-auth/providers/google";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
+import type { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { Adapter } from "next-auth/adapters";
@@ -21,7 +22,7 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         }),
         CredentialsProvider({
-            name: "Credentials",
+            name: "credentials",
             credentials: {
                 email: { label: "email", type: "text" },
                 password: { label: "password", type: "password" },
@@ -83,9 +84,9 @@ export const authOptions: NextAuthOptions = {
                 picture: dbUser.image,
             };
         },
-        redirect() {
-            return "/dashboard";
-        },
+        // redirect() {
+        //     return "/dashboard";
+        // },
     },
     debug: process.env.NODE_ENV === "development",
     session: {

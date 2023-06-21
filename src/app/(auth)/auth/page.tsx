@@ -12,7 +12,7 @@ const page: FC<pageProps> = ({}) => {
     return (
         <>
             <RemoveScrollBar />
-            <h1 className="hidden md:block absolute text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] xl:text-[15rem] right-0 -bottom-3 font-bold dark:text-white pointer-events-none">
+            <h1 className="hidden md:block absolute text-[5rem] sm:text-[7rem] md:text-[8rem] lg:text-[11rem] xl:text-[13rem] right-0 -bottom-3 font-bold dark:text-white pointer-events-none">
                 Junebug.
             </h1>
             <div className="inset-0 mx-auto container flex-col h-screen flex items-center justify-center">

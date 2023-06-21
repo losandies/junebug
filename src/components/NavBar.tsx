@@ -7,7 +7,7 @@ import SignInButton from "./SignInButton";
 import Paragraph from "./ui/Paragraph";
 
 import SignOutButton from "./SignOutButton";
-import { authOptions } from "@/app/api/auth/[...nextauth]";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 interface NavbarProps {}
 
